@@ -29,6 +29,6 @@ spec:
     spec:
       containers:
       - name: mywebsite
-        image: carthmannh/week4demo:50
+        image: carthmannh/week4demo:111
         ports:
         - containerPort: 80
