@@ -29,6 +29,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:latest
+        image: week4demo:100
         ports:
         - containerPort: 80
