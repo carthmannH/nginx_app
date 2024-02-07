@@ -28,7 +28,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        image: carthmannh/week4demo:99
+      - name: mywebsite
+        image: carthmannh/week4demo:30
         ports:
         - containerPort: 80
