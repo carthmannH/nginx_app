@@ -15,10 +15,7 @@ deployment:
   # Define the container image
   image: ${artifact.metadata.image}
   dockercfg: ${artifact.source.dockerconfig}
-
-createNamespace: true
-namespace: ${serviceVariable.namespace}
-
-# Define container ports
   ports:
     - containerPort: 80
+createNamespace: true
+namespace: ${serviceVariable.namespace}
