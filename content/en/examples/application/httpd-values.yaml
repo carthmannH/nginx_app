@@ -1,4 +1,4 @@
-name: example
+name: my-nginx-svc
 replicas: 1
 
 image: <+artifact.image>
@@ -15,7 +15,7 @@ serviceType: LoadBalancer
 # A Service can map an incoming port to any targetPort.
 # targetPort is where application is listening on inside the container.
 servicePort: 80
-serviceTargetPort: 80
+serviceTargetPort: 
 
 # Specify all environment variables to be added to the container.
 # The following two maps, config and secrets, are put into a ConfigMap
@@ -23,6 +23,6 @@ serviceTargetPort: 80
 # Both are added to the container environment in podSpec as envFrom source.
 env:
   config:
-    key1: value10
+    key1: 
   secrets:
-    key2: value2
+    key2: 
