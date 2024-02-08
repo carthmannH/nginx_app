@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{.Values.name}} 
   labels:
-    app: nginx
+    app: {{.Values.name}} 
 spec:
   replicas: 1
   selector:
