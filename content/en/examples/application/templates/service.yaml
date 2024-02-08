@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{.Values.name}}-service
   labels:
-    app: {{.Values.name}} 
+    app: {{.Values.label}} 
 spec:
   type: LoadBalancer
   ports:
