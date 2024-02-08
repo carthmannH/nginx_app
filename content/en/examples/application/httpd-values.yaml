@@ -1,12 +1,11 @@
-kind: Service
-name: my-nginx-svc
-replicas: 1
+name: harness-example
+replicas: 2
 
-image: <+artifact.image>
-# dockercfg: <+artifact.imagePullSecret>
+image: ${artifact.metadata.image}
+dockercfg: ${artifact.source.dockerconfig}
 
 createNamespace: true
-namespace: <+infra.namespace>
+namespace: ${serviceVariable.namespace}
 
 # Service Type allow you to specify what kind of service you want.
 # Possible values for ServiceType are:
@@ -16,6 +15,7 @@ serviceType: LoadBalancer
 # A Service can map an incoming port to any targetPort.
 # targetPort is where application is listening on inside the container.
 servicePort: 80
+serviceTargetPort: 80
 
 
 # Specify all environment variables to be added to the container.
