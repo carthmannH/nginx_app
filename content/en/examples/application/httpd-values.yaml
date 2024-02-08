@@ -1,7 +1,7 @@
 name: my-nginx-svc
 replicas: 1
 
-image: <+artifact.image>
+image: carthmannh/week4demo:225
 # dockercfg: <+artifact.imagePullSecret>
 
 createNamespace: true
