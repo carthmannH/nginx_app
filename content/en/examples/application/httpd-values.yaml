@@ -1,3 +1,4 @@
+kind: Service
 name: my-nginx-svc
 replicas: 1
 
