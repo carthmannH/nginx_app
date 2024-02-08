@@ -1,20 +1,28 @@
-name: harness-example
-
-# Define configurations for the Service
-service:
-  # Define the Service type (LoadBalancer)
-  type: LoadBalancer
-  # Define the port configuration for the Service
-  ports:
-    - port: 80
-      targetPort: 80
-
-# Define configurations for the Deployment
-deployment:
-  replicas: 1
-  # Define the container image
-  image: <+artifact.image>
-  ports:
-    - containerPort: 80
-
-namespace: <+infra.namespace>
+name: <+stage.name>  
+replicas: 1  
+  
+image: <+artifact.image>  
+# dockercfg: <+artifact.imagePullSecret>  
+  
+createNamespace: true  
+namespace: <+infra.namespace>  
+  
+# Service Type allow you to specify what kind of service you want.  
+# Possible values for ServiceType are:  
+# ClusterIP | NodePort | LoadBalancer | ExternalName  
+serviceType: LoadBalancer  
+  
+# A Service can map an incoming port to any targetPort.  
+# targetPort is where application is listening on inside the container.  
+servicePort: 80  
+serviceTargetPort: 80  
+  
+# Specify all environment variables to be added to the container.  
+# The following two maps, config and secrets, are put into a ConfigMap  
+# and a Secret, respectively.  
+# Both are added to the container environment in podSpec as envFrom source.  
+env:  
+  config:  
+    key1: value10  
+  secrets:  
+    key2: value2
