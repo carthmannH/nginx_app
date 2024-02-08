@@ -6,7 +6,9 @@ image: <+artifact.image>
   
 createNamespace: true  
 namespace: <+infra.namespace>  
-  
+
+label: <+stage.variables.label>
+
 # Service Type allow you to specify what kind of service you want.  
 # Possible values for ServiceType are:  
 # ClusterIP | NodePort | LoadBalancer | ExternalName  
