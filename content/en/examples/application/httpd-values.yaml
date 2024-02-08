@@ -19,6 +19,6 @@ deployment:
 createNamespace: true
 namespace: ${serviceVariable.namespace}
 
-  # Define container ports
+# Define container ports
   ports:
     - containerPort: 80
