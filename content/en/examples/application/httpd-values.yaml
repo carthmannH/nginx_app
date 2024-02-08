@@ -13,9 +13,8 @@ service:
 deployment:
   replicas: 1
   # Define the container image
-  image: ${artifact.metadata.image}
-  dockercfg: ${artifact.source.dockerconfig}
+  image: <+artifact.image>
   ports:
     - containerPort: 80
-createNamespace: true
-namespace: ${serviceVariable.namespace}
+
+namespace: <+infra.namespace>
